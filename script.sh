@@ -3,7 +3,7 @@ echo "----------------------------------------------------------" >> resultados.
 for kernel in 3 7 11 15
 do
 	# for para el numero de hilos con respecto al kernel
-	for NumHilos in 32 128 1024 4096 8192 32768
+	for NumHilos in 1 32 128 1024 4096 8192 32768
 	do
 
 
