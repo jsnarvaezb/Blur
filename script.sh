@@ -1,4 +1,5 @@
 # for para el tamano del kernel
+echo "----------------------------------------------------------" >> resultados.txt
 for kernel in 3 7 11 15
 do
 	# for para el numero de hilos con respecto al kernel
@@ -6,16 +7,16 @@ do
 	do
 
 
-		printf "Tiempo para imagen de 720p con un kernel de $kernel y con # $NumHilos hilos \n"
-		time ./blur_cuda 720.jpg $kernel $NumHilos
+		echo "Tiempo para imagen de 720p con un kernel de $kernel y con # $NumHilos hilos \n" >> resultados.txt
+		(time ./blur_cuda 720.jpg $kernel $NumHilos) &>> resultados.txt
 
 
-		printf "Tiempo para imagen de 1080p con un kernel de $kernel y con # $NumHilos hilos \n"
-		time ./blur_cuda 1080.jpg $kernel $NumHilos
+		echo"Tiempo para imagen de 1080p con un kernel de $kernel y con # $NumHilos hilos \n">> resultados.txt
+		(time ./blur_cuda 1080.jpg $kernel $NumHilos) &>> resultados.txt
 
 
-		printf "Tiempo para imagen de 4k con un kernel de $kernel y con # $NumHilos hilos \n"
-		time ./blur_cuda 4k.jpg $kernel $NumHilos
+		echo "Tiempo para imagen de 4k con un kernel de $kernel y con # $NumHilos hilos \n">> resultados.txt
+		(time ./blur_cuda 4k.jpg $kernel $NumHilos) &>> resultados.txt
 
 
 	done
