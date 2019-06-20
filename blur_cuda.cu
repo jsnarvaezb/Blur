@@ -20,6 +20,7 @@ int main(int n, char* argv[])
 	int hilos = 0;
 	int bloques = 0;
 	int hilos_totales;
+	int cuda_err = cudaSuccess;
 	int tam_imagen = 0;
 	float tam_kernel = -1;
 	Mat image;
