@@ -11,7 +11,7 @@ do
 		(time ./blur_cuda 720.jpg $kernel $NumHilos) &>> resultados.txt
 
 
-		echo"Tiempo para imagen de 1080p con un kernel de $kernel y con # $NumHilos hilos \n">> resultados.txt
+		echo "Tiempo para imagen de 1080p con un kernel de $kernel y con # $NumHilos hilos \n">> resultados.txt
 		(time ./blur_cuda 1080.jpg $kernel $NumHilos) &>> resultados.txt
 
 
